@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEALTY MENU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Hero Section -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #E9F5FF; /* Biru muda lembut */
+        }
+        header {
+            background: linear-gradient(90deg, #007BFF, #6C757D); /* Gradasi biru dan abu */
+            color: white;
+            padding: 20px;
+        }
+        .navbar-brand {
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .hero {
+            background-image: url('ASSETS/IMG/menu bergizi gambar.png'); /* Ganti dengan URL gambar makanan segar */
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        .hero h1 {
+            font-size: 48px;
+            animation: fadeIn 2s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .foods-section {
+            padding: 40px 0;
+        }
+        .food-card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6; /* Border netral */
+        }
+        .food-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-color: #dee2e6; /* Oranye untuk efek hover */
+        }
+        .food-card img {
+            border-radius: 10px;
+            width: 100%;
+        }
+        footer {
+            background: linear-gradient(90deg,  #6C757D, #007BFF); /* Gradasi biru */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Tombol dengan warna oranye */
+        .btn-primary {
+            background-color: #007BFF; /* biru */
+            border-color: #8CA9FF;
+        }
+        .btn-primary:hover {
+            background-color: #007BFF; /* biru lebih muda */
+        }
+        /* Style tambahan untuk accordion */
+        .section-header {
+            cursor: pointer;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+        .section-header:hover {
+            transform: scale(1.02);
+        }
+        .section-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+            padding: 0 15px;
+        }
+        .section-content.open {
+            max-height: 1000px;
+            padding: 15px;
+        }
+        .hero {
+            background-image: url('../ASSETS/IMG/gambarpolamakan.jpg');
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #AAC4F5;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        #balita .section-header { border-left: 5px solid #4caf50; }
+        #anak .section-header { border-left: 5px solid #ff9800; }
+        #remaja .section-header { border-left: 5px solid #e91e63; }
+        #dewasa .section-header { border-left: 5px solid #9c27b0; } /* Ungu untuk dewasa */
+        #lansia .section-header { border-left: 5px solid #2196f3; }
+        h2 { color: #333; margin: 0; }
+        img { max-width: 100px; height: auto; margin: 10px; border-radius: 5px; }
+        .menu-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+        .menu-item { background: #fff; padding: 10px; border-radius: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <!-- Header dengan Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/INDEX.HTML">Healthy Menu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../page/event.html">Gizi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../page/infogizi.html">Edukasi</a></li>
+                    </ul>
+                    <form class="d-flex ms-3">
+                        <input class="form-control me-2" type="search" placeholder="Cari..." aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Cari</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <div class="container">
+            <h1>Pola Makan Sehat Berdasarkan Usia</h1>
+            <a href="https://www.halodoc.com" target="_blank" class="btn btn-primary">Lihat Rekomendasi Dokter</a>
+        </div>
+    </section>
+        </div>
+    </section>
+
+    <!-- Foods Section dengan Accordion -->
+    <section class="foods-section">
+        <div class="container">
+            <div id="balita">
+                <div class="section-header" onclick="toggleSection('balita-content')">
+                    <h2>Balita (1-3 Tahun)</h2>
+                </div>
+                <div id="balita-content" class="section-content">
+                    <img src="../ASSETS/IMG/balita.jpg" alt="Ilustrasi Balita">
+                    <p>Pola makan balita harus sederhana, bertekstur lembut, dan kaya nutrisi untuk mendukung pertumbuhan otot serta perkembangan otak. Variasi: Tambahkan elemen bermain makanan untuk membuat makan menyenangkan, seperti bentuk hewan dari sayur.</p>
+                    <ul>
+                        <li><strong>Kalori harian:</strong> 1.000-1.400 kcal.</li>
+                        <li><strong>Komposisi utama:</strong> 50% karbohidrat, 30% protein, 20% lemak sehat.</li>
+                        <li><strong>Contoh menu harian:</strong>
+                            <div class="menu-list">
+                                <div class="menu-item"><strong>Sarapan:</strong> Bubur nasi dengan telur rebus dan pisang.</div>
+                                <div class="menu-item"><strong>Makan siang:</strong> Nasi tim dengan ayam cincang, wortel kukus, dan yogurt.</div>
+                                <div class="menu-item"><strong>Camilan:</strong> Apel parut dengan keju.</div>
+                                <div class="menu-item"><strong>Makan malam:</strong> Sup sayur dengan ikan dan roti gandum.</div>
+                            </div>
+                        </li>
+                        <li><strong>Tips unik:</strong> Gunakan bentuk lucu (seperti bintang dari wortel) untuk mendorong makan sendiri. Hindari gula tambahan; fokus pada susu formula atau ASI. Tambahkan musik anak saat makan untuk suasana ceria.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="anak">
+                <div class="section-header" onclick="toggleSection('anak-content')">
+                    <h2>Anak (4-12 Tahun)</h2>
+                </div>
+                <div id="anak-content" class="section-content">
+                    <img src="../ASSETS/IMG/anak.jpg" alt="Ilustrasi Anak">
+                    <p>Untuk anak-anak, pola makan harus seimbang untuk mendukung aktivitas fisik dan belajar. Variasi: Sertakan pilihan makanan favorit anak seperti pizza sehat untuk motivasi, atau buat "stasiun makan" di rumah.</p>
+                    <ul>
+                        <li><strong>Kalori harian:</strong> 1.400-2.200 kcal (sesuai usia dan aktivitas).</li>
+                        <li><strong>Komposisi utama:</strong> 45% karbohidrat kompleks, 25% protein, 30% sayur/buah.</li>
+                        <li><strong>Contoh menu harian:</strong>
+                            <div class="menu-list">
+                                <div class="menu-item"><strong>Sarapan:</strong> Oatmeal dengan buah beri dan susu.</div>
+                                <div class="menu-item"><strong>Makan siang:</strong> Nasi dengan ayam panggang, brokoli, dan jus jeruk.</div>
+                                <div class="menu-item"><strong>Camilan:</strong> Yogurt dengan granola.</div>
+                                <div class="menu-item"><strong>Makan malam:</strong> Pasta whole wheat dengan saus tomat, daging sapi, dan salad.</div>
+                            </div>
+                        </li>
+                        <li><strong>Tips unik:</strong> Libatkan anak dalam memilih menu mingguan untuk membangun kebiasaan baik. Tambahkan "hari tema" seperti hari sayur untuk variasi rasa. Buat tantangan makan sayur dengan hadiah kecil.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="remaja">
+                <div class="section-header" onclick="toggleSection('remaja-content')">
+                    <h2>Remaja (13-19 Tahun)</h2>
+                </div>
+                <div id="remaja-content" class="section-content">
+                    <img src="../ASSETS/IMG/remaja.jpg" alt="Ilustrasi Remaja">
+                    <p>Remaja membutuhkan nutrisi tinggi untuk lonjakan pertumbuhan, hormon, dan fokus mental. Variasi: Tambahkan opsi vegan atau atletik untuk remaja aktif, seperti smoothie energi atau salad power.</p>
+                    <ul>
+                        <li><strong>Kalori harian:</strong> 2.000-3.000 kcal (lebih tinggi untuk laki-laki aktif).</li>
+                        <li><strong>Komposisi utama:</strong> 50% karbohidrat, 20% protein tinggi, 30% vitamin/mineral.</li>
+                        <li><strong>Contoh menu harian:</strong>
+                            <div class="menu-list">
+                                <div class="menu-item"><strong>Sarapan:</strong> Smoothie dengan pisang, almond, dan susu kedelai.</div>
+                                <div class="menu-item"><strong>Makan siang:</strong> Burger whole wheat dengan daging tanpa lemak, kentang panggang, dan salad hijau.</div>
+                                <div class="menu-item"><strong>Camilan:</strong> Kacang-kacangan dan buah.</div>
+                                <div class="menu-item"><strong>Makan malam:</strong> Nasi merah dengan ikan salmon, kacang panjang, dan susu.</div>
+                            </div>
+                        </li>
+                        <li><strong>Tips unik:</strong> Untuk remaja atlet, tambahkan suplemen seperti kalsium; dorong makan bersama keluarga untuk diskusi nutrisi. Variasi dengan makanan cepat saji sehat seperti wrap ayam. Tambahkan resep DIY untuk eksplorasi kreatif.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="dewasa">
+                <div class="section-header" onclick="toggleSection('dewasa-content')">
+                    <h2>Dewasa (20-64 Tahun)</h2>
+                </div>
+                <div id="dewasa-content" class="section-content">
+                    <img src="../ASSETS/IMG/dewasa.jpg" alt="Ilustrasi Dewasa">
+                    <p>Pola makan dewasa fokus pada keseimbangan energi untuk aktivitas sehari-hari, pencegahan penyakit kronis, dan pemeliharaan berat badan. Variasi: Sesuaikan dengan gaya hidup sibuk, seperti makan siang cepat saji atau diet rendah karbohidrat untuk kesehatan jantung.</p>
+                    <ul>
+                        <li><strong>Kalori harian:</strong> 2.000-2.500 kcal (wanita), 2.500-3.000 kcal (pria).</li>
+                        <li><strong>Komposisi utama:</strong> 45% karbohidrat kompleks, 25% protein, 30% lemak sehat dan serat.</li>
+                        <li><strong>Contoh menu harian:</strong>
+                            <div class="menu-list">
+                                <div class="menu-item"><strong>Sarapan:</strong> Roti gandum utuh dengan alpukat dan telur.</div>
+                                <div class="menu-item"><strong>Makan siang:</strong> Salad ayam dengan quinoa, sayur hijau, dan dressing olive oil.</div>
+                                <div class="menu-item"><strong>Camilan:</strong> Buah segar dengan yogurt rendah lemak.</div>
+                                <div class="menu-item"><strong>Makan malam:</strong> Ikan panggang dengan kentang dan brokoli kukus.</div>
+                            </div>
+                        </li>
+                        <li><strong>Tips unik:</strong> Kombinasikan dengan olahraga rutin seperti jalan kaki; pilih makanan organik untuk kesehatan lingkungan. Variasi dengan hidangan internasional seperti sushi sehat. Pantau asupan kafein dan hindari makan larut malam untuk tidur berkualitas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="lansia">
+                <div class="section-header" onclick="toggleSection('lansia-content')">
+                    <h2>Lansia (65+ Tahun)</h2>
+                </div>
+                <div id="lansia-content" class="section-content">
+                    <img src="../ASSETS/IMG/lansia.jpg" alt="Ilustrasi Lansia">
+                    <p>Pola makan lansia fokus pada pencegahan penyakit kronis seperti osteoporosis dan diabetes. Variasi: Tekankan rasa dan tekstur untuk menjaga nafsu makan, dengan rempah eksotis atau hidangan tradisional.</p>
+                    <ul>
+                        <li><strong>Kalori harian:</strong> 1.600-2.200 kcal (sesuai aktivitas).</li>
+                        <li><strong>Komposisi utama:</strong> 40% karbohidrat rendah GI, 25% protein, 35% serat tinggi.</li>
+                        <li><strong>Contoh menu harian:</strong>
+                            <div class="menu-list">
+                                <div class="menu-item"><strong>Sarapan:</strong> Roti gandum dengan alpukat dan teh hijau.</div>
+                                <div class="menu-item"><strong>Makan siang:</strong> Sup ayam dengan sayur hijau dan quinoa.</div>
+                                <div class="menu-item"><strong>Camilan:</strong> Apel dengan keju rendah lemak.</div>
+                                <div class="menu-item"><strong>Makan malam:</strong> Ikan bakar dengan brokoli kukus dan yogurt.</div>
+                            </div>
+                        </li>
+                        <li><strong>Tips unik:</strong> Gunakan rempah seperti jahe untuk meningkatkan pencernaan; variasi dengan makanan lunak seperti pure sayur untuk gigi sensitif. Konsultasikan dokter untuk suplemen vitamin D. Tambahkan hidangan kecil tapi sering untuk energi stabil.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 NutriMakan. Ikuti kami di Instagram dan Facebook. Pola makan ini berdasarkan rekomendasi WHO dan Kemenkes RI. Konsultasikan ahli gizi untuk penyesuaian pribadi.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function toggleSection(contentId) {
+            const content = document.getElementById(contentId);
+            content.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>

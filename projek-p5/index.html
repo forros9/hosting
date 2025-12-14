@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Menu - Daftar Buah</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset global untuk margin/padding konsisten */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(90deg, #007BFF, #6C757D);
+            color: white;
+            padding: 20px;
+        }
+        .navbar-brand {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('ASSETS/IMG/menu bergizi gambar.png');
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #AAC4F5;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        .hero h1 {
+            font-size: 48px;
+            animation: fadeIn 2s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Section Daftar Buah */
+        .foods-section {
+            padding: 40px 0;
+        }
+        .cards-row {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            flex-wrap: nowrap;
+            padding: 1rem 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        .cards-row > .col-md-4 {
+            flex: 0 0 auto;
+            min-width: 300px;
+        }
+        .food-card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6;
+            height: 100%; /* kartu tinggi penuh untuk rata */
+        }
+        .food-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-color: #FFA500;
+        }
+        .food-card img {
+            border-radius: 10px;
+            width: 100%;
+            height: 250px; /* Diperbesar sedikit dari 200px, tapi tidak terlalu besar */
+            object-fit: cover; /* potong gambar agar pas tanpa distorsi */
+        }
+
+        
+        footer {
+            background: linear-gradient(90deg, #6C757D, #007BFF); /*menghasilkan gradasi biru */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Tombol */
+        .btn-primary {
+            background-color: #FFA500;
+            border-color: #FFA500;
+        }
+        .btn-primary:hover {
+            background-color: #FF8C00;
+        }
+        .yummy-story-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    padding-bottom: 12px;
+  }
+  .story-item {
+    flex: 0 0 auto; /* agar item tetap berdasarkan ukuran */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px; /* lebar item */
+  }
+  .story-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #FFA500; /* border oranye */
+    padding: 3px;
+    object-fit: cover;
+  }
+  .story-item p {
+    margin-top: 8px;
+    font-size: 0.9em;
+    text-align: center;
+    color: #333;
+  }
+  /* Hapus scrollbar standar untuk beberapa browser */
+  .yummy-story-container::-webkit-scrollbar {
+    height: 6px;
+  }
+  .yummy-story-container::-webkit-scrollbar-thumb {
+    background-color: #6C757D;
+    border-radius: 3px;
+  }
+  .story-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid #FFA500;
+    padding: 3px;
+    object-fit: cover;
+}
+.story-item img {
+    width: 110px;
+    height: 110px;
+}
+.story-item {
+    flex: 0 0 300px;     /* lebar kotak */
+    width: 300px;
+}
+
+.story-item img {
+    width: 100%;
+    height: 200px;       /* tinggi gambar */
+    border-radius: 15px; /* tidak bulat lagi */
+    border: 4px solid #FFA500;
+    object-fit: cover;
+}
+    </style>
+</head>
+<body>
+    <!-- Header dengan Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Healthy Menu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="page/event.html">Gizi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="page/infogizi.html">Edukasi</a></li>
+                    </ul>
+                    <form class="d-flex ms-3">
+                        <input class="form-control me-2" type="search" placeholder="Cari makanan..." aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Cari</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero text-center">
+        <div class="container">
+            <h1>Makanan Sehat dan Bergizi untuk Hidup Lebih Baik!</h1>
+            <p>Temukan info nutrisi, resep, dan tips kesehatan di sini.</p>
+        </div>
+    </section>
+
+    <!-- Section Daftar Buah -->
+    <section id="foods" class="foods-section">
+        <div class="container">
+            <div class="row cards-row">
+                <div class="col-md-4">
+                    <div class="card food-card">
+                        <img src="ASSETS/IMG/apelmerah.jpg" class="card-img-top" alt="Apel" />
+                        <div class="card-body">
+                    <h5 class="card-title">Apel</h5>
+                    <p class="card-text">Kalori: 52 kcal | Protein: 0.3g | Vitamin C: 14%.</p>
+                    <a href="https://youtu.be/hRM4HFFILLc?si=5Wj7lkmqYEBPJPl9" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card food-card">
+                          <img src="ASSETS/IMG/jeruksegar.jpg" class="card-img-top" alt="Jeruk" />
+                          <div class="card-body">
+                    <h5 class="card-title">Jeruk</h5>
+                    <p class="card-text">Kalori: 62-66 kcal | Protein: 1.2-1.3g | Vitamin A, C | Serat: 2.8g.</p>
+                    <a href="https://youtu.be/NDdQByuaGIo?si=by7IFFTNANmAc0n6" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                </div>
+            </div> 
+        </div>
+        <div class="col-md-4">
+            <div class="card food-card">
+                           <img src="ASSETS/IMG/stroberi.jpg" class="card-img-top" alt="Strawberry" />
+                           <div class="card-body">
+                    <h5 class="card-title">Strawberry</h5>
+                    <p class="card-text">Kalori: 32 kcal | Protein: 0.7-1g | Vitamin C: 59-60mg | Vitamin B9: 17-24mcg.</p>
+                    <a href="https://youtu.be/_thdE3HXg60?si=SXjJtyUTApcBTfG7" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card food-card">
+                            <img src="ASSETS/IMG/mangga.jpg" class="card-img-top" alt="Mangga" />
+                            <div class="card-body">
+                    <h5 class="card-title">Mangga</h5>
+                    <p class="card-text">Kalori: 99 kcal | Protein: 1.4g | Vitamin C: 67%.</p>
+                    <a href="https://youtu.be/6uXUob5nNU8?si=zgSIWfDgeb84JIQA" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card food-card">
+                           <img src="ASSETS/IMG/alpukat.jpg" class="card-img-top" alt="Alpukat" />
+                           <div class="card-body">
+                    <h5 class="card-title">Alpukat</h5>
+                    <p class="card-text">Kalori: 322 kcal | Protein: 4g | Vitamin C, E, K.</p>
+                    <a href="https://youtu.be/aDIqcoSGVyc?si=zDWXpfZQFYYcgUq2" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card food-card">
+                           <img src="ASSETS/IMG/buahnaga.jpg" class="card-img-top" alt="Buah Naga" />
+                           <div class="card-body">
+                    <h5 class="card-title">Buah Naga</h5>
+                    <p class="card-text">Kalori: 60 kcal | Protein: 1.2g | Vitamin C: 3% | Karbohidrat: 13g | Serat: 3g.</p>
+                    <a href="https://youtu.be/dQ3lulESjv0?si=RFdDy92mAtlAX3K-" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card food-card">
+                            <img src="ASSETS/IMG/pisang.jpg" class="card-img-top" alt="Pisang" />
+                            <div class="card-body">
+                    <h5 class="card-title">Pisang</h5>
+                    <p class="card-text">Kalori: 89-105 kcal | Protein: 1g | Vitamin C, B6 | Serat.</p>
+                    <a href="https://youtu.be/hvuYantU4u0?si=FpOX6S8HLdO2we-h" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card food-card">
+                            <img src="ASSETS/IMG/nanas.jpg" class="card-img-top" alt="Nanas" />
+                            <div class="card-body">
+                    <h5 class="card-title">Nanas</h5>
+                    <p class="card-text">Kalori: 40-50 kcal | Protein: 0.5-0.6g | Vitamin C, B6.</p>
+                    <a href="https://youtu.be/jwN0xOxWZvc?si=DdwidS-wJy6sq8DM" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card food-card">
+                            <img src="ASSETS/IMG/kiwi.jpg" class="card-img-top" alt="Kiwi" />
+                            <div class="card-body">
+                    <h5 class="card-title">Kiwi</h5>
+                    <p class="card-text">Kalori: 89-105 kcal | Protein: 1g | Vitamin C, B6 | Serat.</p>
+                    <a href="https://youtu.be/BVaBIBu4AR8?si=xyJRFoxDTS2SsKth" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card food-card">
+                            <img src="ASSETS/IMG/manggis.jpg" class="card-img-top" alt="Manggis" />
+                            <div class="card-body">
+                    <h5 class="card-title">Manggis</h5>
+                    <p class="card-text">Kalori: 63 kcal | Protein: 0.6g | Vitamin C: 7.2mg | Vitamin B1: 0.03mg.</p>
+                    <a href="https://youtu.be/1WZXtZ40ltY?si=WjsJDRx1aMBzjDZP" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card food-card">
+                            <img src="ASSETS/IMG/peach.jpg" class="card-img-top" alt="Peach" />
+                            <div class="card-body">
+                    <h5 class="card-title">Peach</h5>
+                    <p class="card-text">Kalori: 58 kcal | Protein: 0.1-1g | Vitamin C: 17% | Vitamin A: 10%.</p>
+                    <a href="https://youtu.be/H8Og-4ChoN8?si=vJXe1gNY9ka1DG0A" class="btn btn-primary" target="_blank">Lihat Detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+    </section>
+<div class="yummy-story-container">
+  <div class="story-item">
+    <img src="ASSETS/IMG/nasi jagung ayam.jpg" alt="nasi jagung ayam" />
+    <br>
+    <a href="page/page2.html" class="btn btn-primary mt-2">Lihat Resep</a>
+  </div>
+  <div class="story-item">
+    <img src="ASSETS/IMG/supayam.jpg" alt="sup ayam" />
+    <br>
+    <a href="page/page3.html" class="btn btn-primary">Lihat Resep</a>
+  </div>
+  <div class="story-item">
+    <img class="sayur-tumis" src="ASSETS/IMG/sayur tumis.jpg" alt="sayur tumis" />
+    <br>
+    <a href="page/page4.html" class="btn btn-primary">Lihat Resep</a>
+  </div>
+  <div class="story-item">
+    <img class="smothie" src="ASSETS/IMG/smothie.jpg" alt="smothie" />
+    <br>
+    <a href="page/page5.html" class="btn btn-primary">Lihat Resep</a>
+  </div>
+  <div class="story-item">
+    <img class="oatmeal" src="ASSETS/IMG/Oatmeal.jpg" alt="Oatmeal" />
+    <br>
+    <a href="page/page6.html" class="btn btn-primary">Lihat Resep</a>
+  </div>
+  <div class="story-item">
+    <img class="perkedel-kentang" src="ASSETS/IMG/perkedel_kentang.jpg" alt="Perkedel Kentang" />
+    <br>
+    <a href="page/page7.html" class="btn btn-primary">Lihat Resep</a>
+  </div>
+  <div class="story-item">
+    <img class="infused-water" src="ASSETS/IMG/infused water.jpg" alt="Infused Water" />
+    <br>
+    <a href="page/page8.html" class="btn btn-primary">Lihat Resep</a>
+  </div>
+  <div class="story-item">
+    <img class="salad" src="ASSETS/IMG/salad.jpg" alt="Salad" />
+    <br>
+    <a href="page/page9.html" class="btn btn-primary">Lihat Resep</a>
+  </div>
+</div>
+<br>
+     <!-- Konten utama -->
+    <div class="container">
+        <h1>Hubungi Kami</h1>
+        <p>Alamat: JL.WIJAYA KUSUMA No.46, MOJOPANGGUNG, GIRI, LINGKUNGAN CUKING RW., MOJOPANGGUNG, Kec. Banyuwangi, <br>
+        Telepon: +62831-1777-3617 atau +62 819-3178-7733<br>
+        Email: www.HelathyFoodEsemkasa<br></p>
+        
+        <h2>Kirim Pesan</h2>
+        <form action="#" method="post">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Pesan:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            
+            <button type="submit">Kirim</button>
+        </form>
+        
+        <p>Ikuti kami di <a href="https://instagram.com/mudanflowers https://instagram.com/utami_941">Instagram</a> atau <a href="https://wa.me/6283117773617 https://wa.me/+62819-3178-7733">WhatsApp</a>.</p>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 HealthyFood. Ikuti kami di Instagram dan Facebook.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

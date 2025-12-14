@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resep Salad Buah | HEALTHY MENU</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #E9F5FF; /* Biru muda lembut */
+        }
+        header {
+            background: linear-gradient(90deg, #007BFF, #6C757D); /* Gradasi biru dan abu */
+            color: white;
+            padding: 20px;
+        }
+        .navbar-brand {
+            font-size: 15px;
+            font-weight: bold;
+        }
+        /* PATH GAMBAR HERO DIKOREKSI */
+        .hero {
+            background-image: url('../ASSETS/IMG/menu bergizi gambar.png');
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        .hero h1 {
+            font-size: 48px;
+            animation: fadeIn 2s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .foods-section {
+            padding: 40px 0;
+        }
+        .food-card {
+            transition: transform 0.3s;
+            margin-bottom: 20px;
+            border: 1px solid #dee2e6; /* Border netral */
+        }
+        .food-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border-color: #FFA500; /* Oranye untuk efek hover */
+        }
+        .food-card img {
+            border-radius: 10px;
+            width: 100%;
+        }
+        footer {
+            background: linear-gradient(90deg,  #6C757D, #007BFF); /* Gradasi abu dan biru */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        /* WARNA TOMBOL DIKOREKSI MENJADI ORANYE */
+        .btn-primary {
+            background-color: #FFA500; /* Oranye */
+            border-color: #FFA500;
+        }
+        .btn-primary:hover {
+            background-color: #FF8C00; /* Oranye lebih gelap untuk hover */
+            border-color: #FF8C00;
+        }
+        /* Style untuk placeholder video */
+        .video-placeholder {
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .video-placeholder img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .play-button {
+            font-size: 20px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Healthy Menu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="event.html">Gizi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="infogizi.html">Edukasi</a></li>
+                    </ul>
+                    <form class="d-flex ms-3">
+                        <input class="form-control me-2" type="search" placeholder="Cari..." aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Cari</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+   
+    <main class="container mt-4">
+        <h1>Resep Salad Buah Menyegarkan</h1>
+        <p>Salad buah menyegarkan adalah hidangan sehat yang terbuat dari berbagai jenis buah segar yang diolah dengan cara dicampur dan disajikan dingin.</p>
+
+        <div class="row">
+            
+            <div class="col-lg-6 col-md-12">
+                <section>
+                    <h2 class="menu-utama-title">Bahan-Bahan</h2>
+                    <ul>
+                        <li>Buah Buahan Segar</li>
+                        <li>Yogurt</li>
+                        <li>Susu Kental Manis</li>
+                        <li>Keju secukupnya</li>
+                    </ul>
+                </section>
+                
+                <h3 class="menu-utama-title">Langkah-Langkah (Persiapan Buah)</h3>
+                <ol>
+                    <li>Apel, potong dadu</li>
+                    <li>Melon, potong dadu</li>
+                    <li>Semangka, potong dadu</li>
+                    <li>Pir, potong dadu</li>
+                    <li>Anggur, belah dua atau biarkan utuh jika kecil</li>
+                    <li>Stroberi, belah dua</li>
+                    <li>Kiwi, iris (opsional, untuk rasa asam segar)</li>
+                    <li>Jelly atau agar-agar, potong dadu (opsional)</li>
+                </ol>
+                <h3 class="menu-utama-title">Langkah-Langkah (Penyajian)</h3>
+                <ol start="9">
+                    <li>Campurkan semua buah dan bahan jeli (jika menggunakan) dalam mangkuk besar.</li>
+                    <li>Dalam wadah terpisah, campurkan yogurt dan susu kental manis hingga rata sebagai saus.</li>
+                    <li>Tuang saus di atas buah-buahan.</li>
+                    <li>Aduk perlahan. Taburi dengan parutan keju di atasnya.</li>
+                    <li>Dinginkan di kulkas minimal 30 menit sebelum disajikan.</li>
+                </ol>
+
+            </div>
+            
+            <div class="col-lg-6 col-md-12 mt-4 mt-lg-0">
+                <h2>Video Tutorial Salad Buah</h2>
+                
+                <div class="video-placeholder mb-3">
+                    <img src="../ASSETS/IMG/salad.jpg" alt="Salad Buah Video Placeholder" class="img-fluid">
+                    <div class="video-overlay">
+                        <a href="https://youtu.be/3HtuTCqYPgk" class="btn btn-primary play-button" target="_blank">
+                            ▶️ Tonton di YouTube
+                        </a>
+                    </div>
+                </div>
+                
+                <p class="text-muted mt-2">Sumber: YouTube Channel Hidup Sehat tvOne</p>
+            </div>
+            
+        </div>
+        </main>
+    <footer>
+        <p>&copy; 2025 Healthy Menu. Ikuti kami di Instagram dan Facebook.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

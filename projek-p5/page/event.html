@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manfaat Gizi untuk Kesehatan Tubuh</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* 1. PERBAIKAN BODY */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #AAC4F5;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh; /* MINIMAL SETINGGI VIEWPORT */
+      color: #2c3e50;
+      overflow-x: hidden;
+      position: relative; 
+    }
+
+    /* 2. TAMBAHAN WRAPPER UNTUK MENGHINDARI FOOTER MENIMPA KONTEN */
+    .content-wrap {
+        padding-bottom: 80px; /* Beri padding seukuran tinggi footer agar konten tidak mepet */
+    }
+
+    /* Partikel animasi background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></svg>') repeat;
+      animation: float 20s linear infinite;
+      z-index: -1;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-100px); }
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(90deg, #007BFF, #6C757D);
+      color: white;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+    .navbar-brand {
+      font-size: 15px;
+      font-weight: bold;
+    }
+
+    /* Judul dan Deskripsi */
+    /* ... (CSS Judul, Deskripsi, Grid Container, Card, dll. tetap sama) ... */
+    
+    h1 {
+      font-weight: 800px;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 12px;
+      color: #0d1b2a;
+      animation: fadeInTitle 1.5s ease-in;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    @keyframes fadeInTitle {
+      from { opacity: 0; transform: translateY(-20px) scale(0.9); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    
+    p.description {
+      text-align: center;
+      font-size: 1rem;
+      max-width: 650px;
+      margin: 0 auto 40px;
+      color: #333;
+      animation: fadeInDesc 2s ease-in;
+    }
+    @keyframes fadeInDesc {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Container untuk kotak manfaat gizi */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    /* Kotak manfaat gizi - gradasi biru muda ke putih dengan border gradasi */
+    .card {
+      padding: 24px 20px 32px 20px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #AAC4F5 0%, #FFFFFF 100%); 
+      color: #2c3e50; 
+      border: 4px solid transparent;
+      background-image: linear-gradient(135deg, #AAC4F5 0%, #FFFFFF 100%), linear-gradient(90deg, #007BFF, #6C757D); 
+      background-clip: padding-box, border-box;
+      background-origin: padding-box, border-box;
+      box-shadow: 0 8px 20px rgba(170, 196, 245, 0.3);
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      position: relative;
+      min-height: 220px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(50px) rotateX(10deg);
+      animation: slideIn 1s ease-out forwards;
+    } 
+    @keyframes slideIn {
+      to { opacity: 1; transform: translateY(0) rotateX(0); }
+    }
+    .card:hover {
+      box-shadow: 0 20px 40px rgba(170, 196, 245, 0.5);
+      transform: translateY(-12px) rotateY(5deg) scale(1.05);
+      filter: brightness(1.1) drop-shadow(0 0 20px rgba(170, 196, 245, 0.6));
+    }
+
+    /* Gambar ilustrasi di kartu */
+    .card-img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .card:hover .card-img {
+      transform: scale(1.1) rotate(10deg);
+    }
+
+    /* Ikon tambahan - warna biru gelap */
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #007BFF; /* Biru gelap */
+      transition: transform 0.3s ease;
+    }
+    .card:hover .card-icon {
+      transform: scale(1.2);
+    }
+
+    /* Judul card */
+    .card h3 {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: #0d1b2a; /* Gelap untuk kontras */
+    }
+
+    /* Paragraf card */
+    .card p {
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555; /* Abu-abu gelap */
+      margin: 0;
+    }
+
+    /* Tooltip untuk info tambahan */
+    .card[data-bs-toggle="tooltip"] {
+      cursor: pointer;
+    }
+
+    /* CTA Button */
+    .cta-section {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .btn-cta {
+      background: linear-gradient(135deg, #FFD700, #FFA500);
+      color: #000;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: 700;
+      transition: all 0.3s ease;
+    }
+    .btn-cta:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 20px rgba(255, 215, 0, 0.5);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      .grid-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .card {
+        min-height: 200px;
+      }
+    }
+
+    /* 3. PERBAIKAN FOOTER */
+    footer {
+        background: linear-gradient(90deg, #6C757D, #007BFF); 
+        color: white;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+        /* Menggunakan position: absolute untuk menempel di dasar body (min-height: 100vh) */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="content-wrap">
+    
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">Healthy Menu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Beranda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="event.html">Gizi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="infogizi.html">Edukasi</a></li>
+                    </ul>
+                    <form class="d-flex ms-3">
+                        <input class="form-control me-2" type="search" placeholder="Cari..." aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Cari</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <br>
+    
+    <div class="container">
+      <h1>Manfaat Gizi untuk Kesehatan Tubuh</h1>
+      <p class="description">Jelajahi berbagai manfaat nutrisi seimbang yang esensial untuk mendukung fungsi tubuh dan meningkatkan kualitas hidup Anda secara keseluruhan.</p>
+    </div>
+
+    <section class="grid-container">
+      <div class="card" data-bs-placement="top" title="Dapatkan energi dari karbohidrat kompleks dan protein!">
+        <img src="../ASSETS/IMG/energi.jpg" alt="Energi" class="card-img">
+        <i class="bi bi-lightning-charge card-icon"></i>
+        <h3>Meningkatkan Energi</h3>
+        <p>Asupan gizi yang tepat memberikan energi harian, membantu melawan kelelahan, dan meningkatkan produktivitas.</p>
+      </div>
+      <div class="card" data-bs-toggle="tooltip" data-bs-placement="top" title="Vitamin C dari buah-buahan melawan infeksi!">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=60&h=60&fit=crop&crop=face" alt="Kekebalan" class="card-img">
+        <i class="bi bi-shield-check card-icon"></i>
+        <h3>Memperkuat Sistem Kekebalan</h3>
+        <p>Vitamin dan mineral seperti vitamin C dan zinc membantu tubuh melawan penyakit.</p>
+      </div>
+      <div class="card" data-bs-toggle="tooltip" data-bs-placement="top" title="Minum susu untuk tulang kuat!">
+        <img src="../ASSETS/IMG/tulang.jpg" alt="Tulang" class="card-img">
+        <i class="bi bi-bone card-icon"></i>
+        <h3>Mendukung Kesehatan Tulang</h3>
+        <p>Kalsium dan vitamin D dari gizi seimbang mencegah osteoporosis dan menjaga kekuatan tulang.</p>
+      </div>
+      <div class="card" data-bs-toggle="tooltip" data-bs-placement="top" title="Ikan salmon untuk otak cerdas!">
+        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=60&h=60&fit=crop&crop=face" alt="Otak" class="card-img">
+        <i class="bi bi-brain card-icon"></i>
+        <h3>Meningkatkan Fungsi Otak</h3>
+        <p>Lemak omega-3 dan antioksidan mendukung memori dan konsentrasi.</p>
+      </div>
+      <div class="card" data-bs-toggle="tooltip" data-bs-placement="top" title="Diet seimbang cegah obesitas!">
+        <img src="../ASSETS/IMG/beratbadan.jpg" alt="Berat Badan" class="card-img">
+        <i class="bi bi-graph-up card-icon"></i>
+        <h3 style="white-space: nowrap;">Menjaga Berat Badan Ideal</h3>
+        <p>Gizi seimbang membantu metabolisme, mengurangi risiko obesitas dan penyakit terkait.</p>
+      </div>
+      <div class="card" data-bs-toggle="tooltip" data-bs-placement="top" title="Kolagen dari protein untuk kulit glowing!">
+        <img src="../ASSETS/IMG/rambukulit.jpg" alt="Kulit" class="card-img">
+        <i class="bi bi-heart-pulse card-icon"></i>
+        <h3>Memperbaiki Kulit dan Rambut</h3>
+        <p>Protein dan vitamin A membuat kulit sehat dan rambut berkilau.</p>
+      </div>
+    </section>
+    
+  </div> 
+
+  <footer>
+      <div class="container">
+          <p>&copy; 2025 NutriMakan. Ikuti kami di Instagram dan Facebook.</p>
+      </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
